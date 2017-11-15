@@ -3,7 +3,67 @@
 	
 	<p>{{ message }}</p>
 	
-	<ul>
-	   <li ng-repeat="country in countries">{{country.id}},{{country.countryName}} </li>
-	</ul>
-</div>
+	<!-- <div ng-show='user.successMessahe'><div></div> -->
+	
+    <form data-ng-submit="register()" name="registrationForm">
+  <div class="form-row align-items-center">
+    <div class="col-auto">
+      <label class="sr-only" for="inlineFormInput">first_name</label>
+      <div class="input-group mb-2 mb-sm-0">
+        <div class="input-group-addon"> first_name:</div>
+     <input type="text" data-ng-model="user.first_name" class="form-control mb-2 mb-sm-0" id="inlineFormInputGroup" placeholder="Jane Doe">
+    </div>
+    
+    <div class="col-auto">
+      <label class="sr-only" for="inlineFormInput">last_name</label>
+      <div class="input-group mb-2 mb-sm-0">
+        <div class="input-group-addon"> last_name:</div>
+     <input type="text" data-ng-model="user.last_name" class="form-control mb-2 mb-sm-0" id="inlineFormInputGroup" placeholder="Jane Doe">
+    </div>
+    
+    </div>
+    <div class="col-auto">
+      <label class="sr-only" for="inlineFormInputGroup">Password</label>
+      <div class="input-group mb-2 mb-sm-0">
+        <div class="input-group-addon">Password</div>
+        <input type="password" data-ng-model="user.password" class="form-control" id="inlineFormInputGroup" placeholder="password">
+      </div>
+    </div>
+    <div class="col-auto">
+      <label class="sr-only" for="inlineFormInputGroup">Email</label>
+      <div class="input-group mb-2 mb-sm-0">
+        <div class="input-group-addon">Email</div>
+        <input type="text" data-ng-model="user.email" class="form-control" id="inlineFormInputGroup" placeholder="email">
+      </div>
+    </div>
+    
+    <div class="col-auto">
+      <label class="sr-only" for="inlineFormInputGroup">Number</label>
+      <div class="input-group mb-2 mb-sm-0">
+        <div class="input-group-addon">Number</div>
+        <input type="text" data-ng-model="user.Number" class="form-control" id="inlineFormInputGroup" placeholder="email">
+      </div>
+    </div>
+    
+    <div class="col-auto">
+      <label class="sr-only" for="inlineFormInputGroup">address</label>
+      <div class="input-group mb-2 mb-sm-0">
+        <div class="input-group-addon">address</div>
+        <input type="text" data-ng-model="user.address" class="form-control" id="inlineFormInputGroup" placeholder="email">
+      </div>
+    </div>
+    
+    <div class="col-auto">
+      <label class="sr-only" for="inlineFormInputGroup">dob</label>
+      <div class="input-group mb-2 mb-sm-0">
+        <div class="input-group-addon">dob</div>
+        <input type="text" data-ng-model="user.dob" class="form-control" id="inlineFormInputGroup" placeholder="email">
+      </div>
+    </div>
+    
+
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</form>
