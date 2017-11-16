@@ -3,7 +3,16 @@
 	
 	<p>{{ message }}</p>
 	
-	<!-- <div ng-show='user.successMessahe'><div></div> -->
+	<ul>
+	   <li ng-repeat="country in countries">{{country.id}},{{country.countryName}} </li>
+	</ul>
+	
+	<ul>
+	   <li ng-repeat="user in users">{{user.id}},{{user.email}} </li>
+	</ul>
+</div>
+	
+	<!-- <!-- <div ng-show='user.successMessahe'><div></div> 
 	
     <form data-ng-submit="register()" name="registrationForm">
   <div class="form-row align-items-center">
@@ -66,4 +75,4 @@
       <button type="submit" class="btn btn-primary">Submit</button>
     </div>
   </div>
-</form>
+</form> -->
