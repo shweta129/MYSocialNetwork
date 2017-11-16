@@ -4,21 +4,8 @@ app.controller('loginController', function($scope) {
 
 app.controller('registrationController', function($scope,userService) {
 	$scope.message = 'Look! I am an registration page.';
-	
-	userService.getAllCountry().then(function(response){
-		$scope.countries=response.data
-		console.log("Country List::"+$scope.countries);
-		})
-	userService.getAllUser().then(function(response){
-		$scope.users=response.data
-		console.log("User List::"+$scope.users);
-		})
-});
-
-	
-	
-	
-	/*$scope.user={id:'',first_name:'',last_name:'',password:'',email:'',Number:'',address:'',dob:'',successMessage:'',errorMesssage:''};
+		
+	$scope.user={id:'',firstName:'',lastName:'',email:'',contactNumber:'',password:'',Address:'',dob:'',role:'',successMessage:'',errorMesssage:''};
 	
 	$scope.register= function(){
 		
@@ -34,5 +21,10 @@ app.controller('registrationController', function($scope,userService) {
 		
 		
 	}
-	*/
 	
+	userService.getAllUser().then(function(response){
+		$scope.users=response.data
+		console.log("User List::"+$scope.users);
+		})
+	
+});

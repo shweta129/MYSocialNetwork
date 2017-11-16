@@ -35,6 +35,7 @@ public class UserTest {
 		user.setPassword("12345");
 		user.setAddress("kalwa");
 		user.setDob("28FEB1989");
+		user.setRole("Male");
 	
 		assertEquals("Failed to add user!",true,userDAO.saveUser(user));
 		

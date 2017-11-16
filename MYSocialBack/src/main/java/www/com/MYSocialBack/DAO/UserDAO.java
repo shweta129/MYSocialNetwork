@@ -11,5 +11,7 @@ public interface UserDAO {
 	User validateEmail(String email);
     User validatecontactNumber(String contactNumber);
     List<User> getAllUser();
+    User login(User user);
+    void update(User user);
 	
 }

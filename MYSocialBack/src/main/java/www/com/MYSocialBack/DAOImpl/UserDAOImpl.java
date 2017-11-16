@@ -86,6 +86,21 @@ public List<User> getAllUser() {
 	Query query =SessionFactory.getCurrentSession().createQuery(hql);		
 	return query.list();
 }
+
+@Override
+public User login(User user) {
+	Session session=SessionFactory.getCurrentSession();
+	Query query=session.createQuery("from User where email=? and password=?");
+	query.setString(0, user.getEmail());
+	query.setString(1, user.getPassword());
+	return (User)query.uniqueResult();
+}
+
+@Override
+public void update(User user) {
+	Session session=SessionFactory.getCurrentSession();
+	session.update(user);//update the values [online status]
+}
 	
    
 }

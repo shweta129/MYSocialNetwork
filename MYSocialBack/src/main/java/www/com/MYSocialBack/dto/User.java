@@ -49,13 +49,15 @@ public class User implements Serializable {
 	@NotBlank(message="Please Enter Password!")
 	private String password;
 	
-	@NotBlank(message="Please Enter Address!")
+	//@NotBlank(message="Please Enter Address!")
 	private String Address;
 
     
 	@NotBlank(message="Please Enter Date of Birth!")
 	private String dob;
-
+    
+	
+	private String role;
 
 	/*
 	 * getter setter method
@@ -138,6 +140,16 @@ public class User implements Serializable {
 
 	public void setDob(String dob) {
 		this.dob = dob;
+	}
+
+
+	public String getRole() {
+		return role;
+	}
+
+
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 	

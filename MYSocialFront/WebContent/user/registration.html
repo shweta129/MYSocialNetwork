@@ -3,33 +3,40 @@
 	
 	<p>{{ message }}</p>
 	
-	<ul>
-	   <li ng-repeat="country in countries">{{country.id}},{{country.countryName}} </li>
-	</ul>
-	
-	<ul>
-	   <li ng-repeat="user in users">{{user.id}},{{user.email}} </li>
-	</ul>
-</div>
-	
-	<!-- <!-- <div ng-show='user.successMessahe'><div></div> 
+	<!-- <div ng-show='user.successMessahe'><div></div> -->
 	
     <form data-ng-submit="register()" name="registrationForm">
   <div class="form-row align-items-center">
     <div class="col-auto">
-      <label class="sr-only" for="inlineFormInput">first_name</label>
+      <label class="sr-only" for="inlineFormInput">firstName</label>
       <div class="input-group mb-2 mb-sm-0">
-        <div class="input-group-addon"> first_name:</div>
-     <input type="text" data-ng-model="user.first_name" class="form-control mb-2 mb-sm-0" id="inlineFormInputGroup" placeholder="Jane Doe">
+        <div class="input-group-addon"> First Name:</div>
+       
+     <input type="text" data-ng-model="user.firstName" class="form-control mb-2 mb-sm-0" id="inlineFormInputGroup" placeholder="Jane">
     </div>
-    
+    </div>
+     <div class="col-auto">
+      <label class="sr-only" for="inlineFormInput">lastName</label>
+      <div class="input-group mb-2 mb-sm-0">
+        <div class="input-group-addon"> Last Name:</div>
+     <input type="text" data-ng-model="user.lastName" class="form-control mb-2 mb-sm-0" id="inlineFormInputGroup" placeholder="Jane">
+    </div>
+    </div>
+      <div class="col-auto">
+      <label class="sr-only" for="inlineFormInput">email</label>
+      <div class="input-group mb-2 mb-sm-0">
+        <div class="input-group-addon"> Email:</div>
+     <input type="text" data-ng-model="user.email" class="form-control mb-2 mb-sm-0" id="inlineFormInputGroup" placeholder="email">
+    </div>
+    </div>
+   
+   
     <div class="col-auto">
-      <label class="sr-only" for="inlineFormInput">last_name</label>
+      <label class="sr-only" for="inlineFormInput"> contactNumber</label>
       <div class="input-group mb-2 mb-sm-0">
-        <div class="input-group-addon"> last_name:</div>
-     <input type="text" data-ng-model="user.last_name" class="form-control mb-2 mb-sm-0" id="inlineFormInputGroup" placeholder="Jane Doe">
+        <div class="input-group-addon">  contactNumber:</div>
+     <input type="text" data-ng-model="user.contactNumber" class="form-control mb-2 mb-sm-0" id="inlineFormInputGroup" placeholder=" contactNumber">
     </div>
-    
     </div>
     <div class="col-auto">
       <label class="sr-only" for="inlineFormInputGroup">Password</label>
@@ -39,29 +46,12 @@
       </div>
     </div>
     <div class="col-auto">
-      <label class="sr-only" for="inlineFormInputGroup">Email</label>
+      <label class="sr-only" for="inlineFormInputGroup">Address</label>
       <div class="input-group mb-2 mb-sm-0">
-        <div class="input-group-addon">Email</div>
-        <input type="text" data-ng-model="user.email" class="form-control" id="inlineFormInputGroup" placeholder="email">
+        <div class="input-group-addon">Address</div>
+        <input type="text" data-ng-model="user.Address" class="form-control" id="inlineFormInputGroup" placeholder="email">
       </div>
     </div>
-    
-    <div class="col-auto">
-      <label class="sr-only" for="inlineFormInputGroup">Number</label>
-      <div class="input-group mb-2 mb-sm-0">
-        <div class="input-group-addon">Number</div>
-        <input type="text" data-ng-model="user.Number" class="form-control" id="inlineFormInputGroup" placeholder="email">
-      </div>
-    </div>
-    
-    <div class="col-auto">
-      <label class="sr-only" for="inlineFormInputGroup">address</label>
-      <div class="input-group mb-2 mb-sm-0">
-        <div class="input-group-addon">address</div>
-        <input type="text" data-ng-model="user.address" class="form-control" id="inlineFormInputGroup" placeholder="email">
-      </div>
-    </div>
-    
     <div class="col-auto">
       <label class="sr-only" for="inlineFormInputGroup">dob</label>
       <div class="input-group mb-2 mb-sm-0">
@@ -69,10 +59,17 @@
         <input type="text" data-ng-model="user.dob" class="form-control" id="inlineFormInputGroup" placeholder="email">
       </div>
     </div>
-    
+    <div class="col-auto">
+      <label class="sr-only" for="inlineFormInputGroup">role</label>
+      <div class="input-group mb-2 mb-sm-0">
+        <div class="input-group-addon">role</div>
+        <input type="text" data-ng-model="user.role" class="form-control" id="inlineFormInputGroup" placeholder="role">
+      </div>
+    </div>
 
     <div class="col-auto">
       <button type="submit" class="btn btn-primary">Submit</button>
     </div>
   </div>
-</form> -->
+</form>
+</div>
