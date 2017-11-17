@@ -5,7 +5,7 @@ app.controller('loginController', function($scope) {
 app.controller('registrationController', function($scope,userService) {
 	$scope.message = 'Look! I am an registration page.';
 		
-	$scope.user={id:'',firstName:'',lastName:'',email:'',contactNumber:'',password:'',Address:'',dob:'',role:'',successMessage:'',errorMesssage:''};
+	$scope.user={userID:'',firstName:'',lastName:'',password:'',email:'',Status:'',isOnline:'',contactNumber:'',address:'',dob:'',role:'',successMessage:'',errorMesssage:''};
 	
 	$scope.register= function(){
 		

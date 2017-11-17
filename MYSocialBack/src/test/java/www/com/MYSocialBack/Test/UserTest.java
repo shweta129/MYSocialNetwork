@@ -24,7 +24,7 @@ public class UserTest {
 		userDAO = (UserDAO) context.getBean("userDAO");
 		
 	}
-	
+/*	
 	@Test
 	public  void testAdd() {
 		user = new User();
@@ -39,7 +39,40 @@ public class UserTest {
 	
 		assertEquals("Failed to add user!",true,userDAO.saveUser(user));
 		
-	}
+	}*/
+	/*@Test
+	public  void testAdd() {
+		user = new User();
+		user.setFirstName("shweta");
+		user.setLastName("chaudhari");
+		user.setPassword("123456");
+		user.setEmail("sc@gmail.com");
+		user.setStatus("ol");
+		user.setIsOnline("Online");
+		user.setContactNumber("124567890");
+		user.setAddress("thane");
+		user.setDob("28FEB1989");
+		user.setRole("female");
+	
+		assertEquals("Failed to add user!",true,userDAO.saveUser(user));
+		}*/
+	
+	@Test
+	public  void testAdd() {
+		user = new User();
+		user.setFirstName("sandy");
+		user.setLastName("patil");
+		user.setPassword("123456");
+		user.setEmail("sp@gmail.com");
+		user.setStatus("ol");
+		user.setIsOnline("Online");
+		user.setContactNumber("124567890");
+		user.setAddress("thane");
+		user.setDob("28FEB1989");
+		user.setRole("male");
+	
+		assertEquals("Failed to add user!",true,userDAO.saveUser(user));
+		}
 	}
 
 
