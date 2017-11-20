@@ -1,7 +1,7 @@
 package www.com.MYSocialBack.dto;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,81 +26,90 @@ public class Blog implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int BlogID;
+	private int blogID;
 	
 	@NotBlank(message = "enter name")
-	private String BlogName;
+	private String blogName;
 	
-	private String BlogContent;
+	private String blogContent;
 	
-	private int userID;
+	private String username;
 	
-	private Date CreateDate;
-	private String  Status;
+	private String  status;
 	
-	private int Likes;
+	private int likes;
+	
+	private Date createDate;
 	
 	//setter getter method
 
 	public int getBlogID() {
-		return BlogID;
+		return blogID;
 	}
 
 	public void setBlogID(int blogID) {
-		BlogID = blogID;
+		this.blogID = blogID;
 	}
 
 	public String getBlogName() {
-		return BlogName;
+		return blogName;
 	}
 
 	public void setBlogName(String blogName) {
-		BlogName = blogName;
+		this.blogName = blogName;
 	}
 
 	public String getBlogContent() {
-		return BlogContent;
+		return blogContent;
 	}
 
 	public void setBlogContent(String blogContent) {
-		BlogContent = blogContent;
+		this.blogContent = blogContent;
 	}
 
-	public int getUserID() {
-		return userID;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUserID(int userID) {
-		this.userID = userID;
-	}
-
-	public Date getCreateDate() {
-		return CreateDate;
-	}
-
-	public void setCreateDate(Date createDate) {
-		CreateDate = createDate;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getStatus() {
-		return Status;
+		return status;
 	}
 
 	public void setStatus(String status) {
-		Status = status;
+		this.status = status;
 	}
 
 	public int getLikes() {
-		return Likes;
+		return likes;
 	}
 
 	public void setLikes(int likes) {
-		Likes = likes;
+		this.likes = likes;
+	}
+
+	public Date getCreateDate() {
+		return createDate;
+	}
+
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
 	}
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+
+	
+		
+	
+	
+	
+
+
 	
    
 	

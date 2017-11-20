@@ -7,10 +7,15 @@ app.factory("userService",function($http){
 		return $http.get(BASE_URL+"/user/getAllUsers");		
 	}
 	
+	
+	
 	userService.createUser=function(user){
 		console.log("****** inside user service--createUser()*****")
 		return $http.post(BASE_URL+"/user/register",user);		
 	}
+	
+	
+	
 	
 	return userService;
 });

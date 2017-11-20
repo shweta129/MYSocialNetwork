@@ -1,4 +1,4 @@
-	// create the module and name it app
+	// create the Angular js module and name it app
 var app = angular.module('myApp', ['ngRoute']);
 
 //configure our routes
