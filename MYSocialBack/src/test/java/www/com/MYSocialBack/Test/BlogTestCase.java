@@ -3,19 +3,23 @@ package www.com.MYSocialBack.Test;
 import static org.junit.Assert.*;
 
 import java.util.Date;
+import java.util.List;
+import java.util.logging.Logger;
 
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import www.com.MYSocialBack.DAO.BlogDAO;
 import www.com.MYSocialBack.DAO.UserDAO;
+import www.com.MYSocialBack.DAOImpl.BlogDAOImpl;
 import www.com.MYSocialBack.dto.Blog;
 import www.com.MYSocialBack.dto.User;
 
 public class BlogTestCase {
 
-	
+	public static final Logger log = Logger.getLogger(BlogTestCase.class.getName());
 	
 	public static AnnotationConfigApplicationContext context;
 	private static BlogDAO blogDAO;
@@ -31,7 +35,7 @@ public class BlogTestCase {
 	}
 	
 	
-	
+	@Ignore
 	@Test
 	public  void addBlogTest() {
 		Blog blog = new Blog();
@@ -46,6 +50,54 @@ public class BlogTestCase {
 	
 		assertEquals("Failed to add user!",true,blogDAO.addBlog(blog));
 		
+	}
+	@Ignore
+	@Test
+	public void getBlogTest(){
+		
+		Blog blog = blogDAO.getBlog(2);
+		assertNotEquals("Blog Not Found", blog);
+		
+		log.info("Blog Name:"+blog.getBlogName());
+		log.info("Blog Content"+blog.getBlogContent());
+	}
+	@Ignore	
+	@Test
+	public void getAllBlogTest(){
+		
+	    
+		List<Blog> blogList=(List<Blog>)blogDAO.getAllBlogs();
+		assertNotNull("Blog List Not Found", blogList.get(0));
+		for(Blog blog:blogList)
+			
+		{
+			log.info("Blog ID"+blog.getBlogID()+"::"+"Blog Name:"+blog.getBlogName());
+			assertTrue("Problem in Deletion", blogDAO.deleteBlog(blog));
+		}
+	}
+	@Ignore
+    @Test
+    public void deleteBlogTest()
+    {
+    	Blog blog = (Blog)blogDAO.getBlog(2);
+    	assertTrue("Problem in deletion",blogDAO.deleteBlog(blog));
+    }
+	
+	@Ignore
+	@Test
+	public void updateBlogTest(){
+	
+		Blog blog = (Blog)blogDAO.getBlog(3);
+		blog.setBlogContent("opps");
+		blog.setBlogName("java");
+		assertTrue("Problem in updation",blogDAO.updateBlog(blog));
+	}
+	
+	@Test
+	public void approveBlogTest(){
+		
+		Blog blog = (Blog)blogDAO.getBlog(3);
+		assertTrue("Problem in approve",blogDAO.approveBlog(blog));
 	}
 }
 

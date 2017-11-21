@@ -13,7 +13,7 @@ import org.hibernate.Session;
 import org.springframework.stereotype.Component;
 
 @Entity
-@Table(name = "Forumname")
+@Table(name = "Forum_details")
 @Component
 public class Forum implements Serializable{
 
