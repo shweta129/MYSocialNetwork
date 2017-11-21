@@ -1,31 +1,95 @@
 package www.com.MYSocialBack.DAOImpl;
 
-import java.util.List;
 import java.util.logging.Logger;
 
-import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import www.com.MYSocialBack.DAO.UserDAO;
-import www.com.MYSocialBack.dto.User;
-
+import www.com.MYSocialBack.dto.UserDetail;
 
 @Repository("userDAO")
 @Transactional    //all methods are run under transaction
-public class UserDAOImpl implements UserDAO {
+public  class UserDAOImpl implements UserDAO {
 
-	@Autowired
-	private SessionFactory SessionFactory;
+   
 	
 	
   public static final Logger log = Logger.getLogger(UserDAOImpl.class.getName());
+  
+  @Autowired
+	private SessionFactory SessionFactory;
 
-  @Override
+@Override
+public boolean addUserDetails(UserDetail user) {
+try{
+		
+		SessionFactory.getCurrentSession().save(user);
+		return true;
+	}
+	catch(Exception e)
+	{
+		log.info("Exception Arised:::"+e);
+		return false;
+	}
+}
+
+@Override
+public boolean updateOnlineStatus(String status, UserDetail user) {
+	try{
+		user.setIsOnline(status);
+		SessionFactory.getCurrentSession().update(user);
+		return true;
+	}
+	catch(Exception e)
+	{
+		log.info("Exception Arised:::"+e);
+		return false;
+	}
+}
+
+//@Override
+public UserDetail getUser(String username) {
+	Session session= SessionFactory.openSession();
+	UserDetail user=(UserDetail)session.get(UserDetail.class,username);
+	session.close();
+	return user;
+}
+
+/*//@Override
+public boolean addUser(UserDetail user) {
+	try{
+		
+		SessionFactory.getCurrentSession().save(user);
+		return true;
+	}
+	catch(Exception e)
+	{
+		log.info("Exception Arised:::"+e);
+		return false;
+	}
+	
+}
+
+
+//@Override
+public boolean updateOnlineStatus(String status, UserDetail user) {
+	try{
+		user.setIsOnline(status);
+		SessionFactory.getCurrentSession().update(user);
+		return true;
+	}
+	catch(Exception e)
+	{
+		log.info("Exception Arised:::"+e);
+		return false;
+	}
+}*/
+
+ /* @Override
   public boolean saveUser(User user) {
 		log.info("****Starting save method in UserDaoImpl***");
 		try {
@@ -101,6 +165,6 @@ public void update(User user) {
 	Session session=SessionFactory.getCurrentSession();
 	session.update(user);//update the values [online status]
 }
-	
+	*/
    
 }

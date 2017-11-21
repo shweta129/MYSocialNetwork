@@ -15,7 +15,7 @@ import www.com.MYSocialBack.DAO.BlogDAO;
 import www.com.MYSocialBack.DAO.UserDAO;
 import www.com.MYSocialBack.DAOImpl.BlogDAOImpl;
 import www.com.MYSocialBack.dto.Blog;
-import www.com.MYSocialBack.dto.User;
+import www.com.MYSocialBack.dto.UserDetail;
 
 public class BlogTestCase {
 

@@ -39,7 +39,7 @@ public class ForumTestCase {
 	}
 	
 	
-	
+	@Ignore
 	@Test
 	public  void addForumTest() {
 		Forum forum = new Forum();
@@ -55,7 +55,39 @@ public class ForumTestCase {
 		
 	} 
 	
+	@Ignore
+	@Test
+	public void getForumTest(){
+		
+		Forum forum = forumDAO.getForum(1);
+		assertNotEquals("forum Not Found", forum);
+		
+		log.info("Forum Name:"+forum.getForumName());
+		log.info("Blog Content"+forum.getForumContents());
+	}
+	@Ignore
+	@Test
+	public void getAllForumTest(){
+		
+	    
+		List<Forum> forumList=(List<Forum>)forumDAO.getAllForum();
+		assertNotNull("Forum List Not Found", forumList.get(0));
+		for(Forum forum:forumList)
+			
+		{
+			log.info("Forum ID"+forum.getForumId()+"::"+"Forum Name:"+forum.getForumName());
+			assertTrue("Problem in Deletion", forumDAO.deleteForum(forum));
+		}
+	}
 	
+	@Test
+	public void updateForumTest(){
+	
+		Forum forum = forumDAO.getForum(1);
+		forum.setForumContents("wcd");
+		forum.setForumName("app");
+		assertTrue("Problem in updation",forumDAO.updateForum(forum));
+	}
 	
 	
 }

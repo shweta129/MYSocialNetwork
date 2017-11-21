@@ -13,14 +13,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import www.com.MYSocialBack.DAO.UserDAO;
-import www.com.MYSocialBack.dto.User;
+
 
 @RestController
 @CrossOrigin(origins="http://localhost:8080")
 @RequestMapping("/user")
 public class UserController {
 
-	@Autowired
+	/*@Autowired
 	private UserDAO userDAO;
 	
 	@RequestMapping(value="/getAllUsers",method=RequestMethod.GET,headers="Accept=application/json")
@@ -44,7 +44,7 @@ public class UserController {
 			return new ResponseEntity<User>(user,HttpStatus.METHOD_FAILURE);
 	
 		
-	}
+	}*/
 	
 	}
 	
