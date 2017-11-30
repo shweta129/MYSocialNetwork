@@ -11,11 +11,11 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import www.com.MYSocialBack.DAO.BlogDAO;
-import www.com.MYSocialBack.DAO.UserDAO;
-import www.com.MYSocialBack.DAOImpl.BlogDAOImpl;
-import www.com.MYSocialBack.dto.Blog;
-import www.com.MYSocialBack.dto.UserDetail;
+import www.com.DAO.BlogDAO;
+import www.com.DAO.UserDAO;
+import www.com.DAOImpl.BlogDAOImpl;
+import www.com.dto.Blog;
+import www.com.dto.UserDetail;
 
 public class BlogTestCase {
 
@@ -42,7 +42,7 @@ public class BlogTestCase {
 		blog.setBlogID(1007);
 		blog.setBlogName("core java");
 		blog.setBlogContent("It is based on simple Java Concept");
-		blog.setUsername("sam");
+		blog.setUsername("harshu");
 		blog.setStatus("A");
 		blog.setLikes(3);
 		//blog.setCreateDate(new java.util.Date());
@@ -83,16 +83,16 @@ public class BlogTestCase {
     	assertTrue("Problem in deletion",blogDAO.deleteBlog(blog));
     }
 	
-	@Ignore
+	//@Ignore
 	@Test
 	public void updateBlogTest(){
 	
-		Blog blog = (Blog)blogDAO.getBlog(3);
-		blog.setBlogContent("opps");
+		Blog blog = (Blog)blogDAO.getBlog(1);
+		blog.setBlogContent("mmm");
 		blog.setBlogName("java");
 		assertTrue("Problem in updation",blogDAO.updateBlog(blog));
 	}
-	
+	@Ignore
 	@Test
 	public void approveBlogTest(){
 		

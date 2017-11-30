@@ -14,9 +14,9 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import www.com.MYSocialBack.DAO.ForumDAO;
-import www.com.MYSocialBack.dto.Blog;
-import www.com.MYSocialBack.dto.Forum;
+import www.com.DAO.ForumDAO;
+import www.com.dto.Blog;
+import www.com.dto.Forum;
 
 
 
@@ -39,7 +39,7 @@ public class ForumTestCase {
 	}
 	
 	
-	@Ignore
+	//@Ignore
 	@Test
 	public  void addForumTest() {
 		Forum forum = new Forum();
@@ -79,7 +79,7 @@ public class ForumTestCase {
 			assertTrue("Problem in Deletion", forumDAO.deleteForum(forum));
 		}
 	}
-	
+	@Ignore
 	@Test
 	public void updateForumTest(){
 	
